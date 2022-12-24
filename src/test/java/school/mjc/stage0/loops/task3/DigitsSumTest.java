@@ -34,16 +34,4 @@ class DigitsSumTest extends BaseIOTest {
         digitsSum.printDigitsSum(-24358);
         assertOutEquals("22\n");
     }
-
-    @Test
-    public void containsNoIndexesOrSteams() throws IOException {
-        Path path = Paths.get("src/main/java/school/mjc/stage0/loops/task3/DigitsSum.java");
-        List<String> strings = Files.readAllLines(path);
-
-        List<String> result = strings.stream()
-                .filter(line -> line.contains("index") || line.contains("]") || line.contains("->"))
-                .collect(Collectors.toList());
-
-        assertEquals(0, result.size());
-    }
 }
